@@ -47,15 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\Auditable.cs" />
+    <Compile Include="Abstract\IAuditable.cs" />
+    <Compile Include="Model\Error.cs" />
+    <Compile Include="Model\Footer.cs" />
+    <Compile Include="Model\Page.cs" />
+    <Compile Include="Model\Slide.cs" />
+    <Compile Include="Model\SupportOnline.cs" />
+    <Compile Include="Model\SystemConfig.cs" />
+    <Compile Include="Model\VisitorStatistic.cs" />
+    <Compile Include="Model\_MigrationHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
