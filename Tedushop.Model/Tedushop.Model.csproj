@@ -49,13 +49,8 @@
   <ItemGroup>
     <Compile Include="Abstract\Auditable.cs" />
     <Compile Include="Abstract\IAuditable.cs" />
-    <Compile Include="Model\ApplicationUser.cs" />
     <Compile Include="Model\Error.cs" />
     <Compile Include="Model\Footer.cs" />
-    <Compile Include="Model\IdentityRole.cs" />
-    <Compile Include="Model\IdentityUserClaim.cs" />
-    <Compile Include="Model\IdentityUserLogin.cs" />
-    <Compile Include="Model\IdentityUserRole.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\MenuGroup.cs" />
     <Compile Include="Model\Order.cs" />
@@ -72,7 +67,6 @@
     <Compile Include="Model\SystemConfig.cs" />
     <Compile Include="Model\Tag.cs" />
     <Compile Include="Model\VisitorStatistic.cs" />
-    <Compile Include="Model\_MigrationHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

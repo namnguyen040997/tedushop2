@@ -12,9 +12,11 @@ namespace Tedushop.Model.Model
     public class ProductTag
     {
         [Key]
+        [Column(Order = 1)]
         public int ProductID { get; set; }
 
         [Key]
+        [Column(Order = 2)]
         public string TagID { get; set; }
 
         [ForeignKey("ProductID")]
