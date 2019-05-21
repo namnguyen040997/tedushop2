@@ -11,7 +11,7 @@ namespace Tedushop.Data.Repositories
 {
     //Viết thêm interface cho class trong trường hợp các class đó có các phương thức có sự khác biệt cần phải viết mà trong RepositoryBase ko có.
     //VD trong ProductCategory , chúng ta có thêm phương thức để lấy các Alias
-    public interface IProductCategoryRepository
+    public interface IProductCategoryRepository : IRepository<ProductCategory>
     {
         //Dinh nghia phuong thuc ko co trong RepositoryBase
         IEnumerable<ProductCategory> GetByAlias(string alias);

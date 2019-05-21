@@ -189,6 +189,7 @@ namespace Tedushop.Data.Migrations
                         HomeFlag = c.Boolean(),
                         HotFlag = c.Boolean(),
                         ViewCount = c.Int(),
+                        Status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.PostCategories", t => t.CategoryID, cascadeDelete: true)

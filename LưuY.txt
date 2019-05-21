@@ -1,2 +1,0 @@
-﻿mô hình 3 lớp : data, service, web chính
-còn common : bổ trợ,model: chỉ là tách ra từ data
