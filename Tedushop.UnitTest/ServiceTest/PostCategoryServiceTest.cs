@@ -44,7 +44,7 @@ namespace Tedushop.UnitTest.ServiceTest
             //B2: Call action   (Gọi từ repostiry và lấy đc _lstPostCategory thông qua GetAll())
             var result = _categoryService.GetAll() as List<PostCategory>;
 
-            //B3:Compare (So sánh 2 cái list ở B1 và B2)
+            //B3:Compare
             Assert.IsNotNull(result);
             Assert.AreEqual(3, result.Count);
         }

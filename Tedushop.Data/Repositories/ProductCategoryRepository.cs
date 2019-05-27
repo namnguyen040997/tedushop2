@@ -24,7 +24,7 @@ namespace Tedushop.Data.Repositories
         //    DbFactory = dbFactory;
         //    dbSet = DbContext.Set<T>();
         //}
-        public ProductCategoryRepository(DbFactory dbFactory):base(dbFactory)
+        public ProductCategoryRepository(IDbFactory dbFactory):base(dbFactory)
         {
 
         }

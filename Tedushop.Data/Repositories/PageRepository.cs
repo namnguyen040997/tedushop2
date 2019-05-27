@@ -14,7 +14,7 @@ namespace Tedushop.Data.Repositories
     }
     public class PageRepository : RepositoryBase<Page>, IPageRepository
     {
-        public PageRepository(DbFactory dbFactory) : base(dbFactory)
+        public PageRepository(IDbFactory dbFactory) : base(dbFactory)
         {
 
         }

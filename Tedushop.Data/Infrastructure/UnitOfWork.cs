@@ -8,7 +8,7 @@ namespace Tedushop.Data.Infrastructure
 {
     //Pattern UnitOfWord
     //Khi thuc hien cac phuong thuc thi se day vao database
-    public class UnitOfWork
+    public class UnitOfWork:IUnitOfWork
     {
         private readonly IDbFactory dbFactory;
         private TedushopDbContext dbContext;
@@ -19,7 +19,8 @@ namespace Tedushop.Data.Infrastructure
         }
         public TedushopDbContext DbContext
         {
-            get{ return dbContext ?? (dbContext = dbFactory.Init()); }
+            //Lấy DbCOntext trong dbFactory
+            get { return dbContext ?? (dbContext = dbFactory.Init()); }
         }
         public void Commit()
         {

@@ -14,9 +14,9 @@ namespace Tedushop.UnitTest.RepositoryTest
     public class PostCategoryRepositoryTest
     {
         //Thiết lập 3 đối tượng để tương tác CSDL
-        DbFactory dbFactory;
-        PostCategoryRepository objRepository;
-        UnitOfWork unitOfWork;
+        IDbFactory dbFactory;
+        IPostCategoryRepository objRepository;
+        IUnitOfWork unitOfWork;
         [TestInitialize] //GIúp chạy đầu tiên khi ứng dụng chạy
         public void Initialize()
         {
