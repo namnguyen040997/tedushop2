@@ -30,7 +30,8 @@ namespace Tedushop.Web.Api
             return CreateHttpResponse(request, () =>
             {
                 //Trước khi mapping class:
-
+                //var listCategory2 = _postCategoryService.GetAll();
+                //HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategory2);
 
                 //Sau khi mapping class:
                 //Nếu valid thành công thì dùng cái service để add cái postCategory vào

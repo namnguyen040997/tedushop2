@@ -7,11 +7,14 @@ using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
+using Microsoft.Owin.Security.DataProtection;
 using Owin;
 using Tedushop.Data;
 using Tedushop.Data.Infrastructure;
 using Tedushop.Data.Repositories;
+using Tedushop.Model.Model;
 using Tedushop.Service;
 
 [assembly: OwinStartup(typeof(Tedushop.Web.App_Start.Startup))]
@@ -19,11 +22,12 @@ using Tedushop.Service;
 namespace Tedushop.Web.App_Start
 {
     //Autofac DI Container
-    public class Startup
+    public partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
             ConfigAutofac(app);
+            ConfigureAuth(app);
         }
         private void ConfigAutofac(IAppBuilder app)
         {
@@ -42,11 +46,11 @@ namespace Tedushop.Web.App_Start
             builder.RegisterType<TedushopDbContext>().AsSelf().InstancePerRequest();
 
             //Asp.net Identity
-            //builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
-            //builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
-            //builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
-            //builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
-            //builder.Register(c => app.GetDataProtectionProvider()).InstancePerRequest();
+            builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
+            builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
+            builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
+            builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
+            builder.Register(c => app.GetDataProtectionProvider()).InstancePerRequest();
 
 
             // Khởi tạo đối tượng repository tự động khi có request

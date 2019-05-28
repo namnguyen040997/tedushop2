@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,7 +9,7 @@ using Tedushop.Model.Model;
 
 namespace Tedushop.Data
 {
-    public class TedushopDbContext:DbContext
+    public class TedushopDbContext: IdentityDbContext<ApplicationUser>
     {
         public TedushopDbContext() : base("TeduShopConnection")
         {
@@ -34,10 +35,17 @@ namespace Tedushop.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<VisitorStatistic> VisitorStatistics { get; set; }
 
-        //ghi đè:Se chay khi khoi tao Entity Framework
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //Tạo mới nó để có thể thao tác được với ASP.NET Identity
+        public static TedushopDbContext Create()
         {
+            return new TedushopDbContext();
+        }
 
+        //ghi đè:Se chay khi khoi tao Entity Framework
+        protected override void OnModelCreating(DbModelBuilder builder)
+        {
+            builder.Entity<IdentityUserRole>().HasKey(i =>new { i.UserId, i.RoleId });
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }
     }
 }
