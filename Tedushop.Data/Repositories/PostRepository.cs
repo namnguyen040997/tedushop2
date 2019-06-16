@@ -22,7 +22,7 @@ namespace Tedushop.Data.Repositories
 
         public IEnumerable<Post> GetAllByTag(string tag, int pageIndex, int pageSize, out int totalRow)
         {
-            //Hiển thị danh sách posttag khi click vào link tag
+            //Hiển thị danh sách của post khi click vào link posttag
             var query = from p in DbContext.Posts
                         join pt in DbContext.PostTags
                         on p.ID equals pt.PostID

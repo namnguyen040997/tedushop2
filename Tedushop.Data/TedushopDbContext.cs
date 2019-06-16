@@ -44,6 +44,7 @@ namespace Tedushop.Data
         //ghi đè:Se chay khi khoi tao Entity Framework
         protected override void OnModelCreating(DbModelBuilder builder)
         {
+            //Set key cho 2 bảng IdentityUserRole, IdentityUserLogin
             builder.Entity<IdentityUserRole>().HasKey(i =>new { i.UserId, i.RoleId });
             builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }

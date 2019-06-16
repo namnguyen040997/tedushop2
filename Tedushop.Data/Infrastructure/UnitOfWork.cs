@@ -19,11 +19,12 @@ namespace Tedushop.Data.Infrastructure
         }
         public TedushopDbContext DbContext
         {
-            //Lấy DbCOntext trong dbFactory
+            //Lấy đói tượng DbCOntext trong dbFactory
             get { return dbContext ?? (dbContext = dbFactory.Init()); }
         }
         public void Commit()
         {
+            //Nếu gọi hàm Commit , đối tượng DbContext của DbFactory sẽ lưu vào CSDL
             DbContext.SaveChanges();
         }
     }

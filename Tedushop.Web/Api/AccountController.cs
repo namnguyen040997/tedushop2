@@ -14,8 +14,8 @@ namespace Tedushop.Web.Api
     [RoutePrefix("api/account")]
     public class AccountController : ApiController
     {
-        private ApplicationSignInManager _signInManager; //Kế thừa của IdentityConfig
-        private ApplicationUserManager _userManager;     //Kế thừa của IdentityConfig
+        private ApplicationSignInManager _signInManager; //Class trong IdentityConfig
+        private ApplicationUserManager _userManager;     //Class trong IdentityConfig
 
         public AccountController()
         {
